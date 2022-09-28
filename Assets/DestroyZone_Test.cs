@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class DestroyZone : MonoBehaviour
+public class DestroyZone_Test: MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Player Drop");
-        SceneManager.LoadScene(1);
-        //other.transform.position = other.GetComponent<PlayerMove>().respawnPosition;
+        if (other.gameObject.name.Contains("Player"))
+        {
+            Debug.Log("DestoryZone_Test.Log");
+            //other.transform.position = other.GetComponent<PlayerMove_test>().respawnPosition;
+        }
     }
 }
